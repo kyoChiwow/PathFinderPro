@@ -2,13 +2,35 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useContext } from "react";
 import { AuthContext } from "../Contexts/AuthProvider";
+import userAvatar from "../assets/user.png";
+import { Tooltip } from "react-tooltip";
+
 const NavBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+  const handleLogOut = () => {
+    logOut();
+  }
   const links = (
     <>
-      <NavLink className="hover:bg-base-300 transition duration-300 rounded-xl p-4 text-base" to="/">Home</NavLink>
-      <NavLink className="hover:bg-base-300 transition duration-300 rounded-xl p-4 text-base" to="/auth/register">Register</NavLink>
-      <NavLink className="hover:bg-base-300 transition duration-300 rounded-xl p-4 text-base" to="/auth/myprofile">My Profile</NavLink>
+      <NavLink
+        className="hover:bg-base-300 transition duration-300 rounded-xl p-4 text-base"
+        to="/"
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className="hover:bg-base-300 transition duration-300 rounded-xl p-4 text-base"
+        to="/auth/register"
+      >
+        Register
+      </NavLink>
+      <NavLink
+        className="hover:bg-base-300 transition duration-300 rounded-xl p-4 text-base"
+        to="/auth/myprofile"
+      >
+        My Profile
+      </NavLink>
     </>
   );
   return (
@@ -34,21 +56,43 @@ const NavBar = () => {
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow gap-2"
-          >{links}</ul>
+          >
+            {links}
+          </ul>
         </div>
         <div>
           <img className="w-30 h-32" src={logo} alt="" />
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-4">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1 gap-4">{links}</ul>
       </div>
-      <div className="navbar-end">
-        {
-          user & user?.email ? <button className="btn">Logout</button> : <Link to="/auth/login"><button className="btn">Login</button></Link>
-        }
+      <div className="navbar-end gap-4">
+        {user ? (
+          <img
+            data-tooltip-id="username-tooltip"
+            data-tooltip-content={user?.displayName || "Anonymous"}
+            data-tooltip-place="bottom"
+            className="w-10 h-10 rounded-full object-cover"
+            src={user?.photoURL || userAvatar }
+          />
+        ) : (
+          <img
+            data-tooltip-id="username-tooltip"
+            data-tooltip-content={user?.displayName || "Anonymous"}
+            data-tooltip-place="bottom"
+            className="w-10 h-10 rounded-full object-cover"
+            src={userAvatar}
+          />
+        )}
+        {user ? (
+          <button onClick={handleLogOut} className="btn">Logout</button>
+        ) : (
+          <Link to="/auth/login">
+            <button className="btn">Login</button>
+          </Link>
+        )}
+        <Tooltip id="username-tooltip"></Tooltip>
       </div>
     </div>
   );
