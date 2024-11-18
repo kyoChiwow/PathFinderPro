@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthProvider";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
@@ -7,6 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 const EmailLogin = () => {
   const { loginUserEmail, setUser, loginUserGmail } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
   const handleGoogleLogin = () => {
     loginUserGmail()
       .then((result) => {
@@ -47,7 +48,7 @@ const EmailLogin = () => {
           text: "You have successfully logged into your account!",
           icon: "success",
           willClose: () => {
-            navigate("/");
+            navigate(location?.state ? location.state : "/");
           },
         });
       })
