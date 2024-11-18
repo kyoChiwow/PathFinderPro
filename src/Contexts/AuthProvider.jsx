@@ -1,6 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import app from "../Utils/firebase.init.config";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, updateProfile } from "firebase/auth";
 import PropTypes from "prop-types";
 
 
@@ -16,10 +16,31 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
+
+    // Update Profile function here
+    const updateCreatedUser = (updatedProfile) => {
+        setLoading(true)
+        return updateProfile(auth.currentUser, updatedProfile)
+    }
+
+    // Setting Up Observer
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser)
+            setLoading(false)
+        })
+        return () => {
+            unsubscribe();
+        }
+    }, [])
+
+    // Object for transferring contexts
     const authInfo = {
+        loading,
         createUserEmail,
         setUser,
         user,
+        updateCreatedUser,
         
     }
     return (

@@ -1,23 +1,34 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthProvider";
+import Swal from 'sweetalert2'
 
 const EmailRegister = () => {
-    const { createUserEmail, setUser } = useContext(AuthContext);
+    const { createUserEmail, setUser, updateCreatedUser } = useContext(AuthContext);
     const handleRegistration = (e) => {
         e.preventDefault();
 
         // Getting the value of inputs
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const name = e.target.username.value;
         const photo = e.target.photourl.value;
+        const name = e.target.username.value;
 
         // Calling the Create User Function here
         createUserEmail(email, password)
         .then(result => {
             const user = result.user
             setUser(user);
+            updateCreatedUser({
+              displayName: name,
+              photoURL: photo,
+            })
+            console.log(user);
+            Swal.fire({
+              title: "Success!",
+              text: "You have successfully created your account!",
+              icon: "success"
+            });
         })
     }
   return (
@@ -73,6 +84,7 @@ const EmailRegister = () => {
                 placeholder="Type your password"
                 className="input input-bordered"
                 required
+                name="password"
               />
             </div>
             <div className="form-control mt-6">

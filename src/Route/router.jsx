@@ -4,6 +4,7 @@ import AuthLayout from "../Layouts/AuthLayout";
 import EmailRegister from "../Pages/EmailRegister";
 import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../Pages/MyProfile";
+import EmailLogin from "../Pages/EmailLogin";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/auth/register",
         element: <EmailRegister></EmailRegister>,
+      },
+      {
+        path: "/auth/login",
+        element: <EmailLogin></EmailLogin>,
       },
       {
         path: "/auth/myprofile",
