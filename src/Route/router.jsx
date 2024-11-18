@@ -5,11 +5,16 @@ import EmailRegister from "../Pages/EmailRegister";
 import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../Pages/MyProfile";
 import EmailLogin from "../Pages/EmailLogin";
+import ServiceDetails from "../Pages/ServiceDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
+  },
+  {
+    path: "/service/:id",
+    element: <ServiceDetails></ServiceDetails>
   },
   {
     path: "/auth",

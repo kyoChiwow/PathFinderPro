@@ -86,7 +86,7 @@ const EmailRegister = () => {
         <div className="text-center lg:text-left mb-8">
           <h1 className="text-5xl font-bold">Register here!</h1>
         </div>
-        <div className="card bg-base-100 w-[50%] shrink-0 shadow-2xl">
+        <div className="card bg-base-100 md:w-[80%] lg:w-[60%] xl:w-[50%] shrink-0 shadow-2xl">
           <form onSubmit={handleRegistration} className="card-body">
             <div className="form-control">
               <label className="label">
