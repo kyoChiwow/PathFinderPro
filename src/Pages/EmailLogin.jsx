@@ -4,10 +4,14 @@ import { AuthContext } from "../Contexts/AuthProvider";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 
+
 const EmailLogin = () => {
-  const { loginUserEmail, setUser, loginUserGmail } = useContext(AuthContext);
+  const { loginUserEmail, setUser, loginUserGmail } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+
+  //   Handle Google Login
   const handleGoogleLogin = () => {
     loginUserGmail()
       .then((result) => {
@@ -31,6 +35,7 @@ const EmailLogin = () => {
       });
   };
 
+  //  Handle Email Login
   const handleLogin = (e) => {
     e.preventDefault();
 

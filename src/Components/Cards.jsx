@@ -8,7 +8,7 @@ const Cards = ({ service }) => {
       <figure>
         <img
           src={image}
-          className="h-[316px]"
+          className="xl:h-[316px] lg:h-[188px] w-full"
         />
       </figure>
       <div className="card-body">

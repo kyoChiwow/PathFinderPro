@@ -6,6 +6,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyProfile from "../Pages/MyProfile";
 import EmailLogin from "../Pages/EmailLogin";
 import ServiceDetails from "../Pages/ServiceDetails";
+import Error404 from "../Pages/Error404";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
         <ServiceDetails></ServiceDetails>
       </PrivateRoute>
     ),
+  },
+  {
+    path: "*",
+    element: <Error404></Error404>
   },
   {
     path: "/auth",

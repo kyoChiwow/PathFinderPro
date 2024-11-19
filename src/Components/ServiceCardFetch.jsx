@@ -12,8 +12,8 @@ const ServiceCardFetch = () => {
     }, [])
 
     return (
-        <div className="mt-12">
-            <h1 className="text-2xl font-semibold text-center mb-8">PathFinder Pro Services</h1>
+        <div className="mt-36 bg-base-200 rounded-xl py-4 xl:px-8 px-4">
+            <h1 className="text-4xl font-bold text-center mb-8">PathFinder Pro Services</h1>
 
             {/* Cards div */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

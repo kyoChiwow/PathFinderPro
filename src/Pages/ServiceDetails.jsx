@@ -6,7 +6,13 @@ import Loading from "./Loading";
 const ServiceDetails = () => {
   const { id } = useParams();
   const [services, setServices] = useState(null);
-  console.log(services);
+  const [comments, setComments] = useState([]);
+  const [commentInput, setCommentInput] = useState("");
+
+  const handleAddComment = () => {
+        setComments([...comments, commentInput.trim()]);
+        setCommentInput("");
+  }
 
   useEffect(() => {
     const idInt = parseInt(id);
@@ -34,8 +40,6 @@ const ServiceDetails = () => {
     location,
   } = services;
 
-  console.log(typeof rating);
-
   return (
     <div className="xl:max-w-[80%] lg:max-w-[90%] max-w-[95%] mx-auto">
       <header>
@@ -46,12 +50,12 @@ const ServiceDetails = () => {
         <div className="bg-base-200 py-4 px-8 rounded-2xl">
           {/* Image div */}
           <div className="flex justify-center">
-            <img className="w-[70%] rounded-2xl shadow-xl" src={image} alt="" />
+            <img className="lg:w-[70%] rounded-2xl shadow-xl" src={image} alt="" />
           </div>
           {/* Image div */}
 
           {/* Info Div */}
-          <div className="bg-white rounded-2xl px-8 py-4 mt-8 w-[80%] mx-auto shadow-lg flex flex-col gap-4">
+          <div className="bg-white rounded-2xl py-2 px-4 lg:px-8 lg:py-4 mt-8 mx-auto shadow-lg flex flex-col gap-4">
             <h1 className="font-bold text-2xl">{service_name}</h1>
             <p className="text-lg font-normal">
               Category: <span className="font-semibold">{category}</span>{" "}
@@ -81,11 +85,41 @@ const ServiceDetails = () => {
           {/* Info Div */}
         </div>
         {/* Details Card Div */}
-
-        {/* Feedback Div */}
-        <div></div>
-        {/* Feedback Div */}
       </main>
+
+      {/* Feedback section */}
+      <section className="mt-8 bg-base-200 px-8 py-4 rounded-2xl">
+        {/* Feedback Div */}
+        <div className="flex flex-col-reverse lg:flex-row gap-28">
+          {/* Input Field Div */}
+          <div className="flex flex-col gap-8 lg:w-[50%]">
+            <textarea
+              placeholder="Write your comment here"
+              className="textarea textarea-bordered textarea-success textarea-lg w-full h-[250px]"
+              name="comment"
+              value={commentInput}
+              onChange={(e) => setCommentInput(e.target.value)}
+            ></textarea>
+            <button onClick={handleAddComment} className="btn btn-success">Submit</button>
+          </div>
+          {/* Input Field Div */}
+
+          {/* Added Comment Div */}
+          <div className="bg-white px-8 py-4 rounded-2xl lg:w-[50%]">
+            <h1 className="text-xl font-bold mb-4">Comments here</h1>
+            <div className="">
+                <ul>
+                    {
+                        comments.map((comment, idx) => <li className="list-disc text-lg font-semibold ml-8" key={idx}>{comment}</li> )
+                    }
+                </ul>
+            </div>
+          </div>
+          {/* Added Comment Div */}
+        </div>
+        {/* Feedback Div */}
+      </section>
+      {/* Feedback section */}
     </div>
   );
 };

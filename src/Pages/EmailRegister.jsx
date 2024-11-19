@@ -5,33 +5,32 @@ import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 
 const EmailRegister = () => {
-  const { createUserEmail, setUser, updateCreatedUser, loginUserGmail } =
-    useContext(AuthContext);
+  const { createUserEmail, setUser, updateCreatedUser, loginUserGmail } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // Calling the create user with gmail function here
   const handleGoogleLogin = () => {
     loginUserGmail()
-    .then(result => {
-      const user = result.user
-      setUser(user)
-      Swal.fire({
-        title: "Success!",
-        text: "You have successfully logged in through Google!",
-        icon: "success",
-        willClose: () => {
-            navigate("/")
-        }
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        Swal.fire({
+          title: "Success!",
+          text: "You have successfully logged in through Google!",
+          icon: "success",
+          willClose: () => {
+            navigate("/");
+          },
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          title: "Error!",
+          text: err.message,
+          icon: "error",
+        });
       });
-    })
-    .catch(err => {
-      Swal.fire({
-        title: "Error!",
-        text: err.message,
-        icon: "error",
-      });
-    })
-  }
+  };
 
   const handleRegistration = (e) => {
     e.preventDefault();
@@ -68,9 +67,8 @@ const EmailRegister = () => {
           icon: "success",
           willClose: () => {
             navigate("/");
-          }
+          },
         });
-        
       })
       .catch((err) => {
         Swal.fire({
@@ -137,7 +135,10 @@ const EmailRegister = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
-              <button onClick={handleGoogleLogin} className="btn btn-outline mt-4">
+              <button
+                onClick={handleGoogleLogin}
+                className="btn btn-outline mt-4"
+              >
                 <FcGoogle></FcGoogle>
                 Login With Google
               </button>
