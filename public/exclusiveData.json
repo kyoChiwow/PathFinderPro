@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co.com/Xx4J95f/resume.jpg",
+      "offer_name": "Resume Masterclass",
+      "category": "Skill Enhancement",
+      "description": "A detailed workshop to craft the perfect resume that stands out to recruiters.",
+      "pricing": 50,
+      "duration": "2 hours",
+      "coach": "Jane Doe",
+      "rating": 4.9,
+      "location": "Online"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co.com/16frJss/oneonone.jpg",
+      "offer_name": "One-on-One Career Coaching",
+      "category": "Guidance",
+      "description": "Personalized coaching to align your career goals with actionable steps.",
+      "pricing": 150,
+      "duration": "1 hour",
+      "coach": "John Smith",
+      "rating": 4.8,
+      "location": "125 Career Street, Suite 203, Los Angeles, CA"
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co.com/Zh3YPFb/mockinterview.jpg",
+      "offer_name": "Mock Interview Sessions",
+      "category": "Interview Prep",
+      "description": "Simulated interviews to help you gain confidence and ace the real thing.",
+      "pricing": 75,
+      "duration": "1.5 hours",
+      "coach": "Emily Clark",
+      "rating": 4.7,
+      "location": "Online"
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co.com/FgFPtJq/linkedin.jpg",
+      "offer_name": "LinkedIn Profile Optimization",
+      "category": "Networking",
+      "description": "Enhance your LinkedIn profile to attract recruiters and grow your network.",
+      "pricing": 60,
+      "duration": "1 hour",
+      "coach": "Michael Lee",
+      "rating": 4.8,
+      "location": "Online"
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co.com/b6jvbK4/careerpath.jpg",
+      "offer_name": "Career Path Discovery",
+      "category": "Exploration",
+      "description": "Explore different career paths and choose the one that suits you best.",
+      "pricing": 100,
+      "duration": "2 hours",
+      "coach": "Sophia Turner",
+      "rating": 4.9,
+      "location": "567 Vision Avenue, 5th Floor, New York, NY"
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co.com/jz9fhyP/network.jpg",
+      "offer_name": "Networking Strategies Workshop",
+      "category": "Professional Growth",
+      "description": "Learn strategies to build a strong professional network effectively. And become a planner.",
+      "pricing": 80,
+      "duration": "2 hours",
+      "coach": "Daniel Wilson",
+      "rating": 4.7,
+      "location": "430 Professional Blvd, Conference Room B, Chicago, IL"
+    }
+  ]
+  

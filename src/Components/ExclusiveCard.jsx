@@ -1,0 +1,51 @@
+import PropTypes from "prop-types";
+
+const ExclusiveCard = ({ offer }) => {
+  const {
+    image,
+    offer_name,
+    category,
+    description,
+    pricing,
+    duration,
+    coach,
+    rating,
+    location,
+  } = offer;
+  return (
+    <div className="mt-10">
+      {/* Card Wrapping Div */}
+      <div className="p-4 bg-base-200 rounded-2xl shadow-xl">
+        {/* Image Div */}
+        <div>
+          <img className="rounded-2xl lg:h-[407px] w-full" src={image} alt="" />
+        </div>
+        {/* Image Div */}
+
+        {/* Card Info Div */}
+        <div>
+          <h1 className="font-bold text-2xl my-4 text-center">{offer_name}</h1>
+          <p className="font-medium text-lg mt-4">Category: {category}</p>
+          <p className="font-medium text-lg mt-4">Duration: {duration}</p>
+          <p className="font-medium text-lg mt-4">Coach: {coach}</p>
+          <p className="font-medium text-lg mt-4">Location: {location}</p>
+          <p className="font-medium text-lg mt-4">Description: {description}</p>
+          <div className="text-lg font-normal flex items-center gap-2">
+            Rating:{" "}
+            <div className="bg-white rounded-full p-4">
+              <p className="font-semibold">{rating}</p>{" "}
+            </div>
+          </div>
+          <p className="font-medium text-lg mt-4">Price: {pricing}$</p>
+        </div>
+        {/* Card Info Div */}
+      </div>
+      {/* Card Wrapping Div */}
+    </div>
+  );
+};
+
+ExclusiveCard.propTypes = {
+  offer: PropTypes.object.isRequired,
+};
+export default ExclusiveCard;

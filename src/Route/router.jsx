@@ -7,11 +7,20 @@ import MyProfile from "../Pages/MyProfile";
 import EmailLogin from "../Pages/EmailLogin";
 import ServiceDetails from "../Pages/ServiceDetails";
 import Error404 from "../Pages/Error404";
+import ExclusiveOffer from "../Pages/ExclusiveOffer";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
+  },
+  {
+    path: "/exclusive",
+    element: (
+      <PrivateRoute>
+        <ExclusiveOffer></ExclusiveOffer>,
+      </PrivateRoute>
+    ),
   },
   {
     path: "/service/:id",
@@ -23,7 +32,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <Error404></Error404>
+    element: <Error404></Error404>,
   },
   {
     path: "/auth",

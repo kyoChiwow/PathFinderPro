@@ -10,7 +10,7 @@ const NavBar = () => {
   console.log(user);
   const handleLogOut = () => {
     logOut();
-  }
+  };
   const links = (
     <>
       <NavLink
@@ -30,6 +30,12 @@ const NavBar = () => {
         to="/auth/myprofile"
       >
         My Profile
+      </NavLink>
+      <NavLink
+        className="hover:bg-base-300 transition duration-300 rounded-xl p-4 text-base"
+        to="/exclusive"
+      >
+        Exclusive Offers
       </NavLink>
     </>
   );
@@ -74,7 +80,7 @@ const NavBar = () => {
             data-tooltip-content={user?.displayName || "Anonymous"}
             data-tooltip-place="bottom"
             className="w-10 h-10 rounded-full object-cover"
-            src={user?.photoURL || userAvatar }
+            src={user?.photoURL || userAvatar}
           />
         ) : (
           <img
@@ -86,7 +92,9 @@ const NavBar = () => {
           />
         )}
         {user ? (
-          <button onClick={handleLogOut} className="btn">Logout</button>
+          <button onClick={handleLogOut} className="btn">
+            Logout
+          </button>
         ) : (
           <Link to="/auth/login">
             <button className="btn">Login</button>
