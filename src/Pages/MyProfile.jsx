@@ -46,7 +46,7 @@ const MyProfile = () => {
   const username = profileUser.displayName;
 
   return (
-    <div className="py-10 bg-base-200 rounded-2xl">
+    <div className="py-10 px-4 bg-base-200 rounded-2xl">
       <h1 className="text-4xl font-bold text-center mt-10">Your Profile</h1>
       {/* Image div */}
       <div className="flex justify-center items-center mt-14">
@@ -59,23 +59,23 @@ const MyProfile = () => {
       {/* Image div */}
 
       {/* Info Div */}
-      <div className="mt-10 text-center">
+      <div className="mt-10 flex flex-col items-center">
         <p className="font-medium text-lg mb-4">
           User Name: <span className="font-bold">{username}</span>
         </p>
         <p className="font-medium text-lg mb-4">
           Email: <span className="font-bold">{email}</span>
         </p>
-        <p className="font-medium text-lg mb-4">
+        <p className="font-medium text-lg mb-4 break-all text-center">
           PhotoURL: <span className="font-bold">{photo}</span>
         </p>
       </div>
       {/* Info Div */}
 
-      <div className="divider xl:w-[70%] mx-auto mt-10"></div>
+      <div className="divider md:w-[80%] lg:w-[70%] mx-auto mt-10"></div>
 
       {/* Update Profile input field Div */}
-      <div className="mx-auto xl:w-[40%] mt-20">
+      <div className="mx-auto md:w-[65%] lg:w-[55%] xl:w-[40%] mt-20">
         <h1 className="font-bold text-2xl text-center mb-8">Update Profile</h1>
         <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
           <form onSubmit={handleUpdateProfile} className="card-body">
