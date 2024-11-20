@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 
 const EmailRegister = () => {
-  const { createUserEmail, setUser, updateCreatedUser, loginUserGmail } = useContext(AuthContext);
+  const { createUserEmail, setUser, updateCreatedUser, loginUserGmail, setLoading } = useContext(AuthContext);
   const navigate = useNavigate();
 
   // Calling the create user with gmail function here
@@ -29,7 +29,10 @@ const EmailRegister = () => {
           text: err.message,
           icon: "error",
         });
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+      })
   };
 
   const handleRegistration = (e) => {
@@ -76,7 +79,10 @@ const EmailRegister = () => {
           text: err.message,
           icon: "error",
         });
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+      })
   };
   return (
     <div className="hero bg-base-200 rounded-lg py-24">

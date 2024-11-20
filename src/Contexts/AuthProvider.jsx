@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
 
   // Update Profile function here
   const updateCreatedUser = (updatedProfile) => {
-    setLoading(true);
+    setLoading(true)
     return updateProfile(auth.currentUser, updatedProfile);
   };
 
@@ -67,6 +67,7 @@ const AuthProvider = ({ children }) => {
   // Object for transferring contexts
   const authInfo = {
     loading,
+    setLoading,
     createUserEmail,
     setUser,
     user,
@@ -74,7 +75,6 @@ const AuthProvider = ({ children }) => {
     loginUserEmail,
     loginUserGmail,
     logOut,
-    auth,
     profileUser,
   };
   return (

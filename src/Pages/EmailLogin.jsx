@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 
 
 const EmailLogin = () => {
-  const { loginUserEmail, setUser, loginUserGmail } =
+  const { loginUserEmail, setUser, loginUserGmail, setLoading } =
     useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,7 +32,10 @@ const EmailLogin = () => {
           text: err.message,
           icon: "error",
         });
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+      })
   };
 
   //  Handle Email Login
@@ -63,7 +66,10 @@ const EmailLogin = () => {
           text: err.message,
           icon: "error",
         });
-      });
+      })
+      .finally(() => {
+        setLoading(false);
+      })
   };
   return (
     <div className="hero bg-base-200 rounded-lg py-24">
