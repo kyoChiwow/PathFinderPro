@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     path: "/exclusive",
     element: (
       <PrivateRoute>
-        <ExclusiveOffer></ExclusiveOffer>,
+        <ExclusiveOffer></ExclusiveOffer>
       </PrivateRoute>
     ),
   },

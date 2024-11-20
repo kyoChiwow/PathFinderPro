@@ -21,6 +21,9 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // Getting the current user
+  const profileUser = auth.currentUser;
+
   // Creating user with email and password
   const createUserEmail = (email, password) => {
     setLoading(true);
@@ -71,6 +74,8 @@ const AuthProvider = ({ children }) => {
     loginUserEmail,
     loginUserGmail,
     logOut,
+    auth,
+    profileUser,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

@@ -24,19 +24,19 @@ const ExclusiveCard = ({ offer }) => {
 
         {/* Card Info Div */}
         <div>
-          <h1 className="font-bold text-2xl my-4 text-center">{offer_name}</h1>
-          <p className="font-medium text-lg mt-4">Category: {category}</p>
-          <p className="font-medium text-lg mt-4">Duration: {duration}</p>
-          <p className="font-medium text-lg mt-4">Coach: {coach}</p>
-          <p className="font-medium text-lg mt-4">Location: {location}</p>
-          <p className="font-medium text-lg mt-4">Description: {description}</p>
+          <h1 className="font-bold text-2xl my-4 text-center"><span className="font-semibold">{offer_name}</span></h1>
+          <p className="font-normal text-lg mt-4">Category: <span className="font-semibold">{category}</span></p>
+          <p className="font-normal text-lg mt-4">Duration: <span className="font-semibold">{duration}</span></p>
+          <p className="font-normal text-lg mt-4">Coach: <span className="font-semibold">{coach}</span></p>
+          <p className="font-normal text-lg mt-4">Location: <span className="font-semibold">{location}</span></p>
+          <p className="font-normal text-lg mt-4">Description: <span className="font-semibold">{description}</span></p>
           <div className="text-lg font-normal flex items-center gap-2">
             Rating:{" "}
             <div className="bg-white rounded-full p-4">
               <p className="font-semibold">{rating}</p>{" "}
             </div>
           </div>
-          <p className="font-medium text-lg mt-4">Price: {pricing}$</p>
+          <p className="font-normal text-lg mt-4">Price: <span className="font-semibold">{pricing}$</span></p>
         </div>
         {/* Card Info Div */}
       </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import NavBar from "../Components/NavBar";
 import ExclusiveCard from "../Components/exclusiveCard";
+import Footer from "../Components/Footer";
 
 const ExclusiveOffer = () => {
   const [excluOffers, setExcluOffers] = useState([]);
@@ -10,12 +11,11 @@ const ExclusiveOffer = () => {
       .then((data) => setExcluOffers(data));
   }, []);
   return (
-    <div className="xl:max-w-[80%] max-w-[95%] mx-auto">
-      <header>
-        <NavBar></NavBar>
-      </header>
-
-      <main>
+    <div>
+      <main className="xl:max-w-[80%] max-w-[95%] mx-auto">
+        <header>
+          <NavBar></NavBar>
+        </header>
         {/* Cards Div */}
         <div className="mt-12">
           {/* Cards Info Div */}
@@ -55,13 +55,11 @@ const ExclusiveOffer = () => {
             <div className="lg:w-[47%]">
               <div className="flex flex-col gap-8">
                 <textarea
-                  placeholder="Write your comment here"
+                  placeholder="Write your comment/complain here"
                   className="textarea textarea-bordered textarea-success textarea-lg w-full h-[250px]"
                   name="comment"
                 ></textarea>
-                <button className="btn btn-success">
-                  Submit
-                </button>
+                <button className="btn btn-success">Submit</button>
               </div>
             </div>
             {/* Ticket Input field and Button (Non Functional) */}
@@ -70,6 +68,9 @@ const ExclusiveOffer = () => {
         </div>
         {/* Cards Div */}
       </main>
+      <footer className="mt-20">
+        <Footer></Footer>
+      </footer>
     </div>
   );
 };
