@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import PropTypes from "prop-types";
 
@@ -20,6 +21,11 @@ const AuthProvider = ({ children }) => {
     
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  // Setting a Password Reset Function
+  const passwordReset = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  }
 
   // Getting the current user
   const profileUser = auth.currentUser;
@@ -76,6 +82,7 @@ const AuthProvider = ({ children }) => {
     loginUserGmail,
     logOut,
     profileUser,
+    passwordReset,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

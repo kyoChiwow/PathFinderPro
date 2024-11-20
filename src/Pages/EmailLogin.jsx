@@ -1,13 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Contexts/AuthProvider";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 
-
 const EmailLogin = () => {
   const { loginUserEmail, setUser, loginUserGmail, setLoading } =
     useContext(AuthContext);
+  const [stateEmail, setStateEmail] = useState("")
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -35,7 +35,7 @@ const EmailLogin = () => {
       })
       .finally(() => {
         setLoading(false);
-      })
+      });
   };
 
   //  Handle Email Login
@@ -69,7 +69,7 @@ const EmailLogin = () => {
       })
       .finally(() => {
         setLoading(false);
-      })
+      });
   };
   return (
     <div className="hero bg-base-200 rounded-lg py-24">
@@ -89,6 +89,7 @@ const EmailLogin = () => {
                 className="input input-bordered"
                 required
                 name="email"
+                onChange={(e) => setStateEmail(e.target.value)}
               />
             </div>
             <div className="form-control">
@@ -103,6 +104,11 @@ const EmailLogin = () => {
                 name="password"
               />
             </div>
+            <label className="label">
+              <Link state={stateEmail} to={"/forgotpass"} className="label-text-alt link link-hover">
+                Forgot password?
+              </Link>
+            </label>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
               <button

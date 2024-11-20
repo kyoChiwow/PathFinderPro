@@ -8,11 +8,16 @@ import EmailLogin from "../Pages/EmailLogin";
 import ServiceDetails from "../Pages/ServiceDetails";
 import Error404 from "../Pages/Error404";
 import ExclusiveOffer from "../Pages/ExclusiveOffer";
+import ForgotPassword from "../Pages/ForgotPassword";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
+  },
+  {
+    path: "/forgotpass",
+    element: <ForgotPassword></ForgotPassword>,
   },
   {
     path: "/exclusive",
