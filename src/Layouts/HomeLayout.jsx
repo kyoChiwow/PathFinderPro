@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useLayoutEffect } from "react";
 import Banner from "../Components/Banner";
 import NavBar from "../Components/NavBar";
 import ServiceCardFetch from "../Components/ServiceCardFetch";
@@ -15,15 +15,32 @@ import "aos/dist/aos.css";
 const HomeLayout = () => {
   // AOS Animation here
   useEffect(() => {
+    // AOS initialization
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
-      once: false,
-      offset: 10,
+      once: false,  // Makes sure animations happen on every scroll into view
+      offset: 40,
       delay: 50,
     });
-    AOS.refresh();
-  }, []);
+
+    // AOS refresh on scroll
+    const handleScroll = () => {
+      AOS.refresh(); 
+    };
+
+    // Refresh AOS on scrolling
+    window.addEventListener("scroll", handleScroll); 
+
+    // Refresh AOS on page load
+    window.addEventListener("load", AOS.refresh);
+
+    // Clean up event listeners
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("load", AOS.refresh);
+    };
+  }, []); // This runs only 
 
   const { loading } = useContext(AuthContext);
 
