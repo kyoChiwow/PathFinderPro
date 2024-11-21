@@ -44,7 +44,6 @@ const AuthProvider = ({ children }) => {
 
   // Creating user with GMAIL
   const loginUserGmail = () => {
-    setLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
 

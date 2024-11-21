@@ -33,6 +33,9 @@ const EmailRegister = () => {
         });
       })
       .catch((err) => {
+        if(err.code === "auth/popup-closed-by-user"){
+          return;
+        }
         Swal.fire({
           title: "Error!",
           text: err.message,
