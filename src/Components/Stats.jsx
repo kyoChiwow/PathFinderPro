@@ -1,3 +1,5 @@
+import CountUp from "react-countup";
+
 const Stats = () => {
   return (
     <div className="mt-36 flex flex-col justify-center items-center bg-base-200 py-6 rounded-xl">
@@ -24,7 +26,7 @@ const Stats = () => {
             </svg>
           </div>
           <div className="stat-title">Clients</div>
-          <div className="stat-value">1300+</div>
+          <div className="stat-value"><CountUp end={1300} duration={2.5} suffix="+"></CountUp></div>
         </div>
 
         <div className="stat">
@@ -44,7 +46,7 @@ const Stats = () => {
             </svg>
           </div>
           <div className="stat-title">In Service</div>
-          <div className="stat-value">10 Years</div>
+          <div className="stat-value"><CountUp end={10} duration={2.5} suffix=" Years"></CountUp></div>
         </div>
 
         <div className="stat">
@@ -64,7 +66,7 @@ const Stats = () => {
             </svg>
           </div>
           <div className="stat-title">Services</div>
-          <div className="stat-value">100+</div>
+          <div className="stat-value"><CountUp end={100} duration={2.5} suffix="+"></CountUp></div>
         </div>
       </div>
     </div>
