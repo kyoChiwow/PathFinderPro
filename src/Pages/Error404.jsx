@@ -6,12 +6,14 @@ import { Helmet } from "react-helmet-async";
 const Error404 = () => {
   return (
     <div>
-        <Helmet>
-            <title>PathFinder Pro | Error 404</title>
-        </Helmet>
-        <header className="xl:max-w-[80%] max-w-[95%] mx-auto">
-            <NavBar></NavBar>
-        </header>
+      <Helmet>
+        <title>PathFinder Pro | Error 404</title>
+      </Helmet>
+      <header className="shadow-xl bg-base-200 mb-20">
+        <div className="xl:max-w-[80%] max-w-[95%] mx-auto">
+          <NavBar></NavBar>
+        </div>
+      </header>
       <div className="flex flex-col items-center justify-center mt-36">
         <div>
           <img className="rounded-xl" src={errorpic} alt="" />
