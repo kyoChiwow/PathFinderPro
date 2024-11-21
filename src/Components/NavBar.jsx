@@ -40,7 +40,7 @@ const NavBar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-200">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -92,12 +92,12 @@ const NavBar = () => {
           />
         )}
         {user ? (
-          <button onClick={handleLogOut} className="btn">
+          <button onClick={handleLogOut} className="btn btn-accent">
             Logout
           </button>
         ) : (
           <Link to="/auth/login">
-            <button className="btn">Login</button>
+            <button className="btn btn-accent">Login</button>
           </Link>
         )}
         <Tooltip id="username-tooltip"></Tooltip>

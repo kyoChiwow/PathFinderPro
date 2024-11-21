@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import errorpic from "../assets/404error.jpg";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
+import { Helmet } from "react-helmet-async";
 const Error404 = () => {
   return (
     <div>
+        <Helmet>
+            <title>PathFinder Pro | Error 404</title>
+        </Helmet>
         <header className="xl:max-w-[80%] max-w-[95%] mx-auto">
             <NavBar></NavBar>
         </header>

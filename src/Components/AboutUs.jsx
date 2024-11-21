@@ -1,6 +1,6 @@
 const AboutUs = () => {
   return (
-    <div className="bg-base-200 p-4 lg:px-8 lg:py-4 rounded-2xl mt-32">
+    <div className="bg-base-200 p-4 lg:px-8 lg:py-4 rounded-2xl mt-32 shadow-xl">
       {/* Header Div */}
       <h1 className="font-bold text-4xl mt-4 mb-8 text-center">
         About PathFinder Pro

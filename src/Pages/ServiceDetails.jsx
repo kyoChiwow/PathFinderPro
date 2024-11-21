@@ -3,6 +3,7 @@ import NavBar from "../Components/NavBar";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import Footer from "../Components/Footer";
+import { Helmet } from "react-helmet-async";
 
 const ServiceDetails = () => {
   const { id } = useParams();
@@ -43,10 +44,15 @@ const ServiceDetails = () => {
 
   return (
     <div>
-      <div className="xl:max-w-[80%] lg:max-w-[90%] max-w-[95%] mx-auto">
-        <header>
+      <Helmet>
+        <title>PathFinder Pro | Details</title>
+      </Helmet>
+      <header className="shadow-xl bg-base-200 mb-20">
+        <div className="xl:max-w-[80%] max-w-[95%] mx-auto">
           <NavBar></NavBar>
-        </header>
+        </div>
+      </header>
+      <div className="xl:max-w-[80%] lg:max-w-[90%] max-w-[95%] mx-auto">
         <main>
           {/* Details Card Div */}
           <div className="bg-base-200 py-4 px-8 rounded-2xl">

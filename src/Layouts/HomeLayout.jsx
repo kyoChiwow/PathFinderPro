@@ -8,6 +8,7 @@ import Stats from "../Components/Stats";
 import NewsFaq from "../Components/NewsFaq";
 import AboutUs from "../Components/AboutUs";
 import Footer from "../Components/Footer";
+import { Helmet } from "react-helmet-async";
 
 const HomeLayout = () => {
   const { loading } = useContext(AuthContext);
@@ -17,13 +18,18 @@ const HomeLayout = () => {
 
   return (
     <div>
-      <div className="xl:max-w-[80%] max-w-[95%] mx-auto">
-        {/* Header div */}
-        <header>
+      <Helmet>
+        <title>PathFinder Pro | Home</title>
+      </Helmet>
+      {/* Header div */}
+      <header className="shadow-xl bg-base-200 mb-20">
+        <div className="xl:max-w-[80%] max-w-[95%] mx-auto">
           <NavBar></NavBar>
-        </header>
-        {/* Header div */}
+        </div>
+      </header>
+      {/* Header div */}
 
+      <div className="xl:max-w-[80%] max-w-[95%] mx-auto">
         <main>
           {/* Banner Div */}
           <div>

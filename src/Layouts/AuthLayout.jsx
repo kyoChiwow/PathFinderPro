@@ -12,10 +12,12 @@ const AuthLayout = () => {
   }
   return (
     <div>
-      <div className="xl:max-w-[80%] lg:max-w-[90%] max-w-[95%] mx-auto">
-        <header>
+      <header className="shadow-xl bg-base-200 mb-20">
+        <div className="xl:max-w-[80%] max-w-[95%] mx-auto">
           <NavBar></NavBar>
-        </header>
+        </div>
+      </header>
+      <div className="xl:max-w-[80%] lg:max-w-[90%] max-w-[95%] mx-auto">
         <main>
           <Outlet></Outlet>
         </main>

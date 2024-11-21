@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import NavBar from "../Components/NavBar";
 import ExclusiveCard from "../Components/exclusiveCard";
 import Footer from "../Components/Footer";
+import { Helmet } from "react-helmet-async";
 
 const ExclusiveOffer = () => {
   const [excluOffers, setExcluOffers] = useState([]);
@@ -12,10 +13,15 @@ const ExclusiveOffer = () => {
   }, []);
   return (
     <div>
-      <main className="xl:max-w-[80%] max-w-[95%] mx-auto">
-        <header>
+      <Helmet>
+        <title>PathFinder Pro | Exclusive Offers</title>
+      </Helmet>
+      <header className="shadow-xl bg-base-200 mb-20">
+        <div className="xl:max-w-[80%] max-w-[95%] mx-auto">
           <NavBar></NavBar>
-        </header>
+        </div>
+      </header>
+      <main className="xl:max-w-[80%] max-w-[95%] mx-auto">
         {/* Cards Div */}
         <div className="mt-12">
           {/* Cards Info Div */}
