@@ -1,4 +1,4 @@
-import { useContext, useEffect, useLayoutEffect } from "react";
+import { useContext, useEffect } from "react";
 import Banner from "../Components/Banner";
 import NavBar from "../Components/NavBar";
 import ServiceCardFetch from "../Components/ServiceCardFetch";
