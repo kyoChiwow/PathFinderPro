@@ -1,5 +1,5 @@
 # PathFinder Pro Career Counsel
-### Live Link: [https://assginments-2e056.web.app/](https://assginments-2e056.web.app/)
+
 ---
 ### Requirment Document: [Click Here](https://docs.google.com/document/d/1k4PMueBZdy9_sHxZFpV2EBSzaQH5UgGtXjwkWnX17vk/edit?usp=sharing)
 ---

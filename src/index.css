@@ -12,6 +12,10 @@ body {
   font-family: Poppins;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 a.active {
   font-weight: 800;
   text-decoration: underline;
